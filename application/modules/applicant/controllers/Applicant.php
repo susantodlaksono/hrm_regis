@@ -398,13 +398,12 @@ class Applicant extends MY_Controller {
  		$this->_db->where('status', 1);
  		switch ($method) {
  			case 'get':
- 				return $this->_db->get('vacancy')->result_array();
+ 				return $this->_db->get('vacancy_division')->result_array();
  				break;
  			case 'count':
- 				return $this->_db->count_all_result('vacancy');
+ 				return $this->_db->count_all_result('vacancy_division');
  				break;
  		}
- 		return $this->_db->get('vacancy');
  	}
 
  	public function getVacancy(){
