@@ -59,8 +59,7 @@ class Applicant extends MY_Controller {
 
  	public function printOutBiodata(){
  		$this->load->library('master_employee');
- 		$this->load->library('mdpf');
- 		// $mpdf = new \Mpdf\Mpdf();
+ 		$mpdf = new \Mpdf\Mpdf();
  		$mpdf = new Mpdf();
  		$data['temp_image'] = $this->db->where('employee_id', $this->_loginsession['employee_id'])->where('doc_type', 2)->get('temp_employee_doc')->row_array();
  		$data['temp_employee'] = $this->db->where('id', $this->_loginsession['employee_id'])->get('temp_employee')->row_array();
